@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  background: aliceblue;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* form task container css */
+.formContainer {
+  border: 1px solid #d9d9d9;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.formLabel {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.formElement {
+  border: 1px solid #e6e9ec;
+  border-radius: 4px;
+  padding: 10px 10px;
+  width: 98%;
+  font-size: 14px;
+}
+.formElement:focus {
+  border: 1px solid #3e8afa;
+  outline: 0;
+}
+
+.addNewTaskButton {
+  border: none;
+  background: #28e386;
   color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.addNewTaskButton:hover {
+  opacity: 0.5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dragContainer {
+  display: flex;
+  column-gap: 20px;
+  justify-content: space-around;
+}
+
+.colDivide {
+  min-width: 300px;
+  height: 100%;
+  border: 1px solid #d9d9d9;
+  padding: 0px 10px;
+  background: #f3f3f3;
+  border-radius: 10px;
+}
+
+/* task item css */
+.heading {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.taskItem {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: white;
+  box-shadow: 0px 0px 5px 3px #e1e1e1;
+}
+
+.taskTitle {
+  padding: 2px 6px;
+  font-size: 20px;
+  color: #3e8afa;
+  font-weight: 500;
+}
+
+.taskDesc {
+  margin: 1.2rem 0px;
+  font-family: "Poppins", sans-serif;
+  color: gray;
+}
+
+/* status background color */
+.lowPriority {
+  background-color: #c6ebc9;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.mediumPriority {
+  background-color: #ffedb3;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.highPriority {
+  background-color: #ffbfbf;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+/* task list css */
+.taskListMinHeight {
+  min-height: 80px;
 }
