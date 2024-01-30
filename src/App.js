@@ -22,13 +22,13 @@ function App() {
 
   return (
     <div style={{ padding: "30px" }}>
+      <h2 style={{textAlign:"center"}}>Task Management App</h2>
       <div>
         <h5 className="heading">Task Form</h5>
         <div className="formContainer">
           <TaskForm onsubmit={onsubmit} />
         </div>
       </div>
-
       <div>
         <h5 className="heading">Task List</h5>
         <TaskList taskList={taskList} />
