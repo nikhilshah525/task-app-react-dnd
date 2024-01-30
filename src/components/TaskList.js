@@ -3,7 +3,7 @@ import TaskItem from "./TaskItem";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import _ from "lodash";
 
-const TaskList = ({ taskList }) => {
+const TaskList = ({ taskList, taskChange }) => {
   const onDragEnd = (result) => {
     const { source, destination } = result;
     if (!destination) return;
@@ -17,11 +17,12 @@ const TaskList = ({ taskList }) => {
       updatedTaskList[source.droppableId] = sourceTaskList;
       updatedTaskList[destination.droppableId] = destTaskList;
     } else {
-      const copiedItems = [...taskList[source.droppableId]];
+      let copiedItems = [...taskList[source.droppableId]];
       const [draggableObject] = copiedItems.splice(source.index, 1);
       copiedItems.splice(destination.index, 0, draggableObject);
       updatedTaskList[source.droppableId] = copiedItems;
     }
+    taskChange(updatedTaskList);
     localStorage.setItem("allTaskList", JSON.stringify(updatedTaskList));
   };
 
